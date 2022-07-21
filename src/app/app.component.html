@@ -1,0 +1,24 @@
+<div class="container">
+  <h2>Angular Display Data from JSON</h2>
+
+<!-- search -->
+    <div class="form-outline">
+      <label for="form1" class="form-label"><b>Search</b></label>
+      <input type="text" class="form-control" id="form1" [(ngModel)]="search"/>
+    </div>
+
+<!-- table -->
+  <table class="table table-bordered table-hover table-striped">
+    <thead class="thead-light">
+      <tr>
+        <th>Categories</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let name of arrayLists | searchFilter: search">
+        <td>{{ name }}</td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
